@@ -39,8 +39,9 @@ namespace EditorWithPlaceholderSample.iOS.Effects
             nativeTextField.AddSubview(placeholderText);
         }
 
-
-
+		protected override void OnDetached()
+		{
+		}
 
     }
 }
