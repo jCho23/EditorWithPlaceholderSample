@@ -21,18 +21,19 @@
             Margin= "10,10,10,50"
             VerticalOptions= "Start" HorizontalOptions= "Center"/>
 
+         <Frame>
+            <Frame.HasShadow>
+                <OnPlatform 
+                    x:TypeArguments="x:Boolean"
+                    iOS="false"
+                    Android="true"
+                    WinPhone="true" />
+            </Frame.HasShadow>
+                
+            <local:EditorWithPlaceholder 
+                Placeholder="Add Text here..." /> 
+        </Frame>
 
-
-
-
-
-
-
-
-
-
-
-        
     </StackLayout>
 
 </ContentPage>
