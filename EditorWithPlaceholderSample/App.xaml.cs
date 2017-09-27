@@ -1,5 +1,7 @@
 ﻿using Xamarin.Forms;
 
+using EditorWithPlaceholderSample.Pages;
+
 namespace EditorWithPlaceholderSample
 {
     public partial class App : Application
@@ -8,7 +10,7 @@ namespace EditorWithPlaceholderSample
         {
             InitializeComponent();
 
-            MainPage = new EditorWithPlaceholderSamplePage();
+            MainPage = new EditorWithPlaceholderPage();
         }
 
         protected override void OnStart()
