@@ -61,5 +61,28 @@ namespace EditorWithPlaceholderSample.Droid.Effects
 		protected override void OnDetached()
 		{
 		}
+
+		protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
+		{
+			base.OnElementPropertyChanged(args);
+			try
+			{
+				if (args.PropertyName == "IsFocused")
+				{
+					if (((Android.Graphics.Drawables.ColorDrawable)Control.Background).Color == backgroundColor)
+					{
+						Control.SetBackgroundColor(Android.Graphics.Color.White);
+					}
+					else
+					{
+						Control.SetBackgroundColor(backgroundColor);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
+			}
+		}
     }
 }
