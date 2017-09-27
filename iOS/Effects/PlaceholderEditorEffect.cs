@@ -3,14 +3,13 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-using EditorWithPlaceholderSample.iOS.Effects;
 using EditorWithPlaceholderSample.Controls;
+using EditorWithPlaceholderSample.iOS.Effects;
 
 [assembly: ResolutionGroupName("Xamarin")]
 [assembly: ExportEffect(typeof(PlaceholderEditorEffect), nameof(PlaceholderEditorEffect))]
 namespace EditorWithPlaceholderSample.iOS.Effects
 {
-
     public class PlaceholderEditorEffect : PlatformEffect
     {
         UILabel placeholderText;
