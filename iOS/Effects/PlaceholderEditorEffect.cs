@@ -43,5 +43,30 @@ namespace EditorWithPlaceholderSample.iOS.Effects
 		{
 		}
 
+		protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
+		{
+			base.OnElementPropertyChanged(args);
+
+			switch (args.PropertyName)
+			{
+				case nameof(EditorWithPlaceholder.Placeholder):
+					placeholderText.Text = formsEditor.Placeholder;
+					placeholderText.SizeToFit();
+					break;
+				case nameof(EditorWithPlaceholder.PlaceholderTextColor):
+					placeholderText.TextColor = formsEditor.PlaceholderTextColor.ToUIColor();
+					break;
+				case nameof(EditorWithPlaceholder.Width):
+					placeholderText.Frame = new CoreGraphics.CGRect(8, 5, formsEditor.Width - 16, 30);
+					break;
+				case nameof(EditorWithPlaceholder.Text):
+					if (string.IsNullOrEmpty(formsEditor.Text))
+						placeholderText.Alpha = 1;
+					else
+						placeholderText.Alpha = 0;
+					break;
+			}
+		}
+
     }
 }
