@@ -57,5 +57,9 @@ namespace EditorWithPlaceholderSample.Droid.Effects
 				Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
 			}
 		}
+
+		protected override void OnDetached()
+		{
+		}
     }
 }
